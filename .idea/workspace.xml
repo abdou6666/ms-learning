@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="51800bd8-7d18-4206-9b11-6e3b31c397fe" name="Changes" comment="" />
+    <list default="true" id="09ddbef5-0969-4861-bc08-8e4c2def4c44" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ms-learning.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,10 +16,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
+  "associatedIndex": 2
 }]]></component>
-  <component name="ProjectId" id="2W4ZOuZMaooa8dGyNQi7HS5ZEmc" />
+  <component name="ProjectId" id="2W4n1lAhCKjY9ojANIuFYMqgIBe" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -26,25 +32,19 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/abdou/Desktop/ms-learning",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "two.files.diff.last.used.folder": "C:/Users/abdou/Desktop/ms-learning",
+    "git-widget-placeholder": "abdou",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="51800bd8-7d18-4206-9b11-6e3b31c397fe" name="Changes" comment="" />
-      <created>1695993783883</created>
+      <changelist id="09ddbef5-0969-4861-bc08-8e4c2def4c44" name="Changes" comment="" />
+      <created>1696000507441</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1695993783883</updated>
-      <workItem from="1695993785041" duration="364000" />
+      <updated>1696000507441</updated>
+      <workItem from="1696000510215" duration="250000" />
     </task>
     <servers />
   </component>
