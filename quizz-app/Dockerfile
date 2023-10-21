@@ -1,0 +1,7 @@
+FROM openjdk:8-jdk-alpine
+
+EXPOSE 8080
+
+ADD target/quizz-0.0.1-SNAPSHOT.jar quizz-0.0.1-SNAPSHOT.jar
+
+ENTRYPOINT  ["java", "-jar", "quizz-0.0.1-SNAPSHOT.jar"]
