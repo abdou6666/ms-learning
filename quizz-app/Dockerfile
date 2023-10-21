@@ -1,6 +1,7 @@
 FROM openjdk:8-jdk-alpine
+#default port
+EXPOSE 8009
 
-EXPOSE 8080
 
 ADD target/quizz-0.0.1-SNAPSHOT.jar quizz-0.0.1-SNAPSHOT.jar
 
