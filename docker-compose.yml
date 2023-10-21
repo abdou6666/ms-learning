@@ -15,3 +15,14 @@ services:
     image: post-service
     depends_on:
     - discovery
+
+
+  category:
+    build: ./category
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+    ports:
+      - 8082:8082
+    image: category-service
+    depends_on:
+      - discovery
