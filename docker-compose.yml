@@ -41,3 +41,13 @@ services:
     image: api_gateway
     depends_on:
     - discovery
+    
+  quizz:
+    build: ./quizz-app
+    environment:
+    - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+    ports:
+    - 8009:8009
+    image: quizz-service
+    depends_on:
+    - discovery
