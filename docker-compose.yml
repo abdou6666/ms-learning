@@ -15,3 +15,13 @@ services:
     image: post-service
     depends_on:
     - discovery
+
+  comment:
+    build: ./comments
+    environment:
+    - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+    ports:
+    - 8081:8081
+    image: comments-service
+    depends_on:
+    - discovery
