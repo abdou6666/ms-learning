@@ -26,3 +26,13 @@ services:
     image: category-s
     depends_on:
       - discovery
+
+  api-gateway:
+    build: ./api-gateway
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+    ports:
+      - 8081:8081
+    image: gateway-service
+    depends_on:
+      - discovery
