@@ -11,8 +11,9 @@ public class SpringCloudConfig {
     @Bean
     public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
         return builder.routes()
-                .route(r -> r.path("/api/posts/**")
-                        .uri("http://localhost:8088/")
+
+                .route(r -> r.path("/api/cours/**")
+                        .uri("http://cours:8082/")
                 ).build();
 
 //Micro-service 2

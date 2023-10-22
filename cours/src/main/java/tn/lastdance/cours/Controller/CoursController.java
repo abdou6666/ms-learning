@@ -11,13 +11,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:8081")
+
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/cours")
 public class CoursController {
     @Autowired
     CoursRepository coursRepository;
-    @GetMapping("/cours")
+    @GetMapping("/coursall")
     public ResponseEntity<List<Cours>> getAllCours(@RequestParam(required = false) String title) {
         try {
             List<Cours> cours = new ArrayList<Cours>();
@@ -37,7 +37,7 @@ public class CoursController {
         }
     }
 
-    @GetMapping("/cours/{id}")
+    @GetMapping("/coursall/{id}")
     public ResponseEntity<Cours> getCourById(@PathVariable("id") long id) {
         Optional<Cours> coursData = coursRepository.findById(id);
 
