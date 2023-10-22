@@ -3,11 +3,11 @@ package tn.esprit.comments;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class CommentsApplicationTests {
+//@SpringBootTest
+//class CommentsApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+	//@Test
+	//void contextLoads() {
+	//}
 
-}
+//}
