@@ -13,9 +13,11 @@ public class SpringCloudConfig {
         return builder.routes()
 
 
+
                 .route(r -> r.path("/api/cours/**")
                         .uri("http://cours:8082/")
-                ).build();
+                )
+
 
 
                 .route(r->r.path("/api/comments/**")
