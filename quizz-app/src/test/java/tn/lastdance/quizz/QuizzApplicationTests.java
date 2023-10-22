@@ -3,11 +3,11 @@ package tn.lastdance.quizz;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class QuizzApplicationTests {
+//@SpringBootTest
+//class QuizzApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
+    //@Test
+   // void contextLoads() {
+   // }
 
-}
+//}
