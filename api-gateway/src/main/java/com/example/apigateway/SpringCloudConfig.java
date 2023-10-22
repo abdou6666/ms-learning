@@ -15,9 +15,9 @@ public class SpringCloudConfig {
                         .uri("http://localhost:8088/")
                 ).build();
 //Micro-service 2
-//                .route(r -> r.path("/consumer/**")
-//                        .uri("http://localhost:8082/")
-//                       .id("consumerModule"))
+  //              .route(r -> r.path("/category/**")
+    //                   .uri("http://localhost:8082/")
+      //                 .id("category-service"))
 
     }
 
