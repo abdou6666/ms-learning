@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.example.apigateway.ApiGatewayApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.365 s - in com.example.apigateway.ApiGatewayApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 22.732 s - in com.example.apigateway.ApiGatewayApplicationTests
