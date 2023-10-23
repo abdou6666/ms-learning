@@ -46,19 +46,15 @@ services:
   forum:
     build: ./forum
     environment:
+      - spring.jpa.hibernate.ddl-auto=update
       - spring.datasource.url=jdbc:postgresql://postgres:5432/msDB
       - spring.datasource.username=postgres
       - spring.datasource.password=123456
       - spring.config.import=optional:configserver:http://discovery:8761
       - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
-      
-      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
-      - spring.datasource.username=postgres
-      - spring.datasource.password=123456
-      - spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
-      - spring.datasource.driver-class-name=org.h2.Driver
-      - jpa.hibernate.ddl-auto=update
-      - spring.config.import=optional:configserver:http://discovery:8761
+      - spring.jpa.show-sql=true
+      - spring.jpa.properties.hibernate.format_sql=true
+      - spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQL81Dialect
       - spring.jpa.defer-datasource-initialization=true
     ports:
       - "8086:8086"
