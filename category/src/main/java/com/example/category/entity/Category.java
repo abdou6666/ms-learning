@@ -1,13 +1,12 @@
 package com.example.category.entity;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import java.io.Serializable;
 
 @Entity
 @Table(name="Category")
 public class Category implements Serializable {
-    private static final long serialVersionUID = 6 ;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -41,13 +40,13 @@ public class Category implements Serializable {
         this.type = type;
     }
 
-    public Category(){
+  /* public Category(){
         super();
     }
     public Category(String nom){
         super();
         this.nom=nom;
-    }
+    } */
 
 
 }
