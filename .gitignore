@@ -1,7 +1,7 @@
 .idea
 .vscode
 /*/target/*
-
+/forum/target/*
 !/quizz-app/target/quizz-0.0.1-SNAPSHOT.jar
 !./quizz-app/target\quizz-0.0.1-SNAPSHOT.jar
 /*/data
