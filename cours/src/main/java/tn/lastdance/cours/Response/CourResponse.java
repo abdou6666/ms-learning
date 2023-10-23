@@ -1,44 +1,38 @@
-package tn.lastdance.cours.Entity;
+package tn.lastdance.cours.Response;
 
-import javax.persistence.*;
-import java.io.Serializable;
+import javax.persistence.Column;
 
-@Entity
-@Table(name = "Cours")
-public class Cours  {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class CourResponse {
     private long id;
 
 
-    @Column(name = "title")
+
     private String title;
 
-    @Column(name = "description")
+
     private String description;
 
 
-    @Column(name = "image")
+
     private String image;
-    @Column(name = "rating")
+
     private int rating;
 
-
-    public Cours() {
-
+    public CommentResponse getCommentResponse() {
+        return commentResponse;
     }
 
-    public Cours(String title, String description,String image, int rating) {
-        this.title = title;
-        this.description = description;
-        this.image = image;
-        this.rating = rating;
-
+    public void setCommentResponse(CommentResponse commentResponse) {
+        this.commentResponse = commentResponse;
     }
+
+    private CommentResponse commentResponse;
 
     public long getId() {
         return id;
     }
+
+
 
     public String getTitle() {
         return title;
@@ -63,6 +57,7 @@ public class Cours  {
     public void setImage(String image) {
         this.image = image;
     }
+
     public int getRating() {
         return rating;
     }
@@ -70,7 +65,4 @@ public class Cours  {
     public void setRating(int rating) {
         this.rating = rating;
     }
-
-
-
 }
