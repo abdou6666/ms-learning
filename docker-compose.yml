@@ -32,6 +32,41 @@ services:
       - jpa.show-sql=true
       - jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
 
+
+  postgres:
+    image: postgres:13-alpine
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=msDB
+
+  forum:
+    build: ./forum
+    environment:
+      - spring.datasource.url=jdbc:postgresql://postgres:5432/msDB
+      - spring.datasource.username=postgres
+      - spring.datasource.password=123456
+      - spring.config.import=optional:configserver:http://discovery:8761
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+      
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+      - spring.datasource.username=postgres
+      - spring.datasource.password=123456
+      - spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+      - spring.datasource.driver-class-name=org.h2.Driver
+      - jpa.hibernate.ddl-auto=update
+      - spring.config.import=optional:configserver:http://discovery:8761
+      - spring.jpa.defer-datasource-initialization=true
+    ports:
+      - "8086:8086"
+    image: forum-service
+    depends_on:
+      - discovery
+      - postgres
+
   post:
     build: ./posts
     environment:
@@ -107,3 +142,5 @@ services:
     image: cours-service
     depends_on:
       - discovery
+
+
