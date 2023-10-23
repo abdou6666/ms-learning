@@ -10,7 +10,9 @@ import tn.esprit.comments.Service.CommentService;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api/comments")
+
 public class CommentCT {
 
     @Autowired
