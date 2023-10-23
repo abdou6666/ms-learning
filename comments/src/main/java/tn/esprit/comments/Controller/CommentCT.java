@@ -2,15 +2,8 @@ package tn.esprit.comments.Controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.comments.Entity.Comment;
-import tn.esprit.comments.Response.CommentReponse;
-
-
-
 import tn.esprit.comments.Service.CommentService;
 
 
@@ -45,15 +38,4 @@ public class CommentCT {
 
         commentService.deleteComment(commentId);
     }
-
-
-
-
-
-    @GetMapping("/address/{courId}")
-    public ResponseEntity<CommentReponse> getAddressByEmployeeId(@PathVariable("courId") Long courId) {
-        CommentReponse addressResponse = commentService.findAddressByEmployeeId(courId);
-        return ResponseEntity.status(HttpStatus.OK).body(addressResponse);
-    }
-
 }

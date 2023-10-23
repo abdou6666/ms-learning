@@ -22,8 +22,6 @@ public class Cours  {
     private String image;
     @Column(name = "rating")
     private int rating;
-
-
     public Cours() {
 
     }
