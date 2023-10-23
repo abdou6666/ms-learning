@@ -26,6 +26,18 @@ public class SpringCloudConfig {
                         .uri("http://events:3000/")
 
                 )
+                .route(r -> r.path("/api/cours/**")
+                        .uri("http://cours:8082/")
+                )
+
+                 .route(r -> r.path("/api/categories/**")
+                        .uri("http://category:8082/") 
+                )
+
+                .route(r -> r.path("/api/forum/**")
+                        .uri("http://forum:8086/")
+
+                )
                 .build();
                // .route(r->r.path("/api/comments/**")
                  //       .uri("http://localhost:8081/")
