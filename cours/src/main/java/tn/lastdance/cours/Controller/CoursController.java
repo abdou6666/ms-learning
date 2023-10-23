@@ -6,8 +6,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tn.lastdance.cours.Entity.Cours;
 import tn.lastdance.cours.Reposiroty.CoursRepository;
-import tn.lastdance.cours.Response.CourResponse;
-import tn.lastdance.cours.Service.CourService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,8 +17,6 @@ import java.util.Optional;
 public class CoursController {
     @Autowired
     CoursRepository coursRepository;
-    @Autowired
-    private CourService courService;
     @GetMapping("/coursall")
     public ResponseEntity<List<Cours>> getAllCours(@RequestParam(required = false) String title) {
         try {
@@ -100,13 +96,6 @@ public class CoursController {
         }
 
     }
-
-    @GetMapping("/touslescours/{id}")
-    private ResponseEntity<CourResponse> getEmployeeDetails(@PathVariable("id") Long id) {
-        CourResponse employee = courService.getEmployeeById(id);
-        return ResponseEntity.status(HttpStatus.OK).body(employee);
-    }
-
 
 
 }
