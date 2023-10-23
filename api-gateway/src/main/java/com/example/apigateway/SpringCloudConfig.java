@@ -11,15 +11,6 @@ public class SpringCloudConfig {
     @Bean
     public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
         return builder.routes()
-
-
-
-                .route(r -> r.path("/api/cours/**")
-                        .uri("http://cours:8082/")
-                )
-
-
-
                 .route(r->r.path("/api/comments/**")
                         .uri("http://comment:8085/"))
 
@@ -30,19 +21,16 @@ public class SpringCloudConfig {
                 .route(r -> r.path("/api/quiz/**")
                 .uri("http://quizz:8009/")
 
-                )
-                .route(r -> r.path("/api/forum/**")
-                .uri("http://forum:8086/")
+        )
+                .route(r -> r.path("/api/events/**")
+                        .uri("http://events:3000/")
 
                 )
-                        .route(r -> r.path("/api/categories/**")
-                                                  .uri("http://category:8082/") )
                 .build();
                // .route(r->r.path("/api/comments/**")
                  //       .uri("http://localhost:8081/")
                 //)
                 //.build();
-
 //Micro-service 2
 //                .route(r -> r.path("/consumer/**")
 //                        .uri("http://localhost:8082/")
