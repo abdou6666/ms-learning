@@ -11,7 +11,7 @@ Maven
 Docker
 Docker Compose
 
-Step 1: Clone the Project
+## Step 1: Clone the Project
 Clone the repository to your local machine using Git:
 
 in cmd terminal
@@ -19,31 +19,36 @@ Copy code
 git clone https://github.com/abdou6666/ms-learning
 cd your-project
 
-Step 2: Build the Project
+
+## Step 2: Build the Project
 Use Maven to build the project. Make sure you are in the project root directory:
 
 in cmd terminal
 mvn clean install
 
-Step 3: Build Docker Images
+
+## Step 3: Build Docker Images
 Build Docker images for each project in the repository. Navigate to each project's directory and build the Docker image:
 
 in cmd terminal
 docker compose build 
 
-Step 4: Docker Compose
+
+## Step 4: Docker Compose
 Navigate back to the root directory of the project and use Docker Compose to start the services. The provided docker-compose.yml file defines the services and their configurations:
 
 in cmd terminal
 docker-compose up 
 This command will start all the services defined in the docker-compose.yml file in detached mode.
 
-Step 5: Testing
+
+## Step 5: Testing
 Once the services are up and running, you can test your application. Depending on your project and its services, open a web browser or use tools like Postman to interact with the application.
 
 Access the services as needed using the appropriate URLs, such as http://localhost:port. Refer to each project's documentation for specific endpoints and usage.
 
-Step 6: Stopping and Cleanup
+
+## Step 6: Stopping and Cleanup
 To stop and remove the services, run the following Docker Compose command:
 
 in cmd terminal
