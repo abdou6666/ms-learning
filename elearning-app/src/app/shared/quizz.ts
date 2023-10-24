@@ -2,11 +2,12 @@ export interface Quizz {
     id: number;
     nom: string;
     description: string;
-    durre: number;
+    duree: string;
     questions: Question[];
     tentatives: Tentative[];
 
 }
+
 export interface Question {
     id: number;
     text: string;
@@ -14,6 +15,7 @@ export interface Question {
     choix_multiple: boolean;
     quizz_id: number;
 }
+
 export interface Option {
     id: number;
     text: string;

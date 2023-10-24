@@ -1,8 +1,7 @@
 <div class="quiz-list">
-  <div *ngFor="let quiz of quizzes" class="quiz">
-    <h2>{{ quiz.nom }}</h2>
-    <ul>
-      <li *ngFor="let question of quiz.questions">{{ question.text }}</li>
-    </ul>
-  </div>
+    <div *ngFor="let quiz of quizzes" class="quiz">
+        <h2>{{ quiz.nom }}</h2>
+        <h3>{{quiz.description}}</h3>
+        <h4> {{quiz.duree}} minutes</h4>
+    </div>
 </div>
