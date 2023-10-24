@@ -49,7 +49,7 @@ This command will start all the services defined in the docker-compose.yml file 
 ## Step 5: Testing
 Once the services are up and running, you can test your application. Depending on your project and its services, open a web browser or use tools like Postman to interact with the application.
 
-Access the services as needed using the appropriate URLs, such as http://localhost:8081 . Refer to each project's documentation for specific endpoints and usage.
+Access the services as needed using the appropriate URL, http://localhost:8081 because the api-gateway is configured in this port  . 
 
 
 ## Step 6: Stopping and Cleanup
