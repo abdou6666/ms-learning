@@ -10,6 +10,7 @@ Git
 Maven
 Docker
 Docker Compose
+angular 
 
 ## Step 1: Clone the Project
 Clone the repository to your local machine using Git:
@@ -27,7 +28,11 @@ in cmd terminal
 copy code
 mvn clean install
 
-
+in cmd terminal 
+cd events
+npm i
+cd elearning-app
+npm i
 ## Step 3: Build Docker Images
 Build Docker images for each project in the repository. Navigate to each project's directory and build the Docker image:
 
