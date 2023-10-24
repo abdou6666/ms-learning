@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router'; // Ajout de l'import pour le routage
 import { HttpClientModule } from '@angular/common/http';
-
+import {QuizzModule} from "./quizz/quizz.module";
+import {QuizzRoutingModule} from "./quizz/quizz-routing.module";
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CoursComponent } from './cours/cours.component';
 import { PostsComponent } from './posts/posts.component';
 import { EventsComponent } from './events/events.component';
-import { QuizComponent } from './quiz/quiz.component';
 import { ForumComponent } from './forum/forum.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { FormsModule } from '@angular/forms';
@@ -20,13 +20,11 @@ const routes: Routes = [
   { path: 'cours', component: CoursComponent },
   { path: 'posts', component: PostsComponent },
   { path: 'events', component: EventsComponent },
-  { path: 'quiz', component: QuizComponent },
+  {path:   'quiz',  loadChildren: () => import('./quizz/quizz.module').then(m => m.QuizzModule)},
   { path: 'forum', component: ForumComponent },
   { path: 'comment/:id', component: CommentsComponent },
   { path: 'cours/:id', component: CourseDetailComponent },
   { path: 'forum/:id', component: ForumDetailComponent },
-
-  
 ];
 
 @NgModule({
@@ -36,14 +34,14 @@ const routes: Routes = [
     CoursComponent,
     PostsComponent,
     EventsComponent,
-    QuizComponent,
     ForumComponent,
     CourseDetailComponent,
     ForumDetailComponent,
     CommentsComponent,
   ],
-  imports: [FormsModule, HttpClientModule, BrowserModule, RouterModule.forRoot(routes)],
+  imports: [FormsModule,QuizzRoutingModule, QuizzModule, HttpClientModule, BrowserModule, RouterModule.forRoot(routes)],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -153,22 +153,22 @@ services:
       - discovery
 
   category:
-      build: ./category
-      environment:
-        - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
-        - spring.datasource.username=root
-        - spring.datasource.password=root
-        - spring.datasource.url=jdbc:h2:file:./db/h2test.db
-        - spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
-        - spring.datasource.driver-class-name=org.h2.Driver
-        - jpa.hibernate.ddl-auto=update
-        - spring.config.import=optional:configserver:http://discovery:8761
-        - spring.jpa.defer-datasource-initialization=true
-      ports:
-        - 8093:8093
-      image: category-s
-      depends_on:
-        - discovery
+    build: ./category
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+      - spring.datasource.username=root
+      - spring.datasource.password=root
+      - spring.datasource.url=jdbc:h2:file:./db/h2test.db
+      - spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+      - spring.datasource.driver-class-name=org.h2.Driver
+      - jpa.hibernate.ddl-auto=update
+      - spring.config.import=optional:configserver:http://discovery:8761
+      - spring.jpa.defer-datasource-initialization=true
+    ports:
+      - 8093:8093
+    image: category-s
+    depends_on:
+      - discovery
 
 
   front:

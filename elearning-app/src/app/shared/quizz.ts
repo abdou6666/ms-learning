@@ -1,19 +1,22 @@
-export interface Quizz {
+export interface Quiz {
     id: number;
     nom: string;
     description: string;
-    durre: number;
+    duree: string;
     questions: Question[];
     tentatives: Tentative[];
 
 }
+
 export interface Question {
     id: number;
     text: string;
     point: number;
     choix_multiple: boolean;
     quizz_id: number;
+    options: Option[];
 }
+
 export interface Option {
     id: number;
     text: string;
