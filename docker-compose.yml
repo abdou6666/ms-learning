@@ -9,6 +9,15 @@ services:
     expose:
       - "27017"
 
+  # users_mongo_db:
+  #   container_name: users_mongo_db
+  #   image: "mongo:latest"
+  #   restart: always
+  #   ports:
+  #     - 27018:27017
+  #   expose:
+  #     - "27018"
+
   discovery:
     build: ./eureka-server
     ports:
@@ -31,6 +40,7 @@ services:
       - jpa.hibernate.ddl-auto=update
       - jpa.show-sql=true
       - jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+      - spring.main.web-application-type=reactive
 
   post:
     build: ./posts
@@ -51,6 +61,16 @@ services:
     build: ./api-gateway
     environment:
       - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+      # - spring.cloud.config.enabled=false
+      # - eureka.client.register-with-eureka = true
+      # - spring.cloud.gateway.discovery.locator.enabled= true
+      # - spring.security.oauth2.resourceserver.jwt.issuer-uri=http://localhost:8180/auth/realms/jobBoardKeyCloak
+      # - keycloak.auth-server-url=http://localhost:8180/auth
+      # - keycloak.realm=jobBoardKeyCloak
+      # - keycloak.resource=candidat-service
+      # - keycloak.public-client=true
+      # - keycloak.use-resource-role-mappings=true
+
     ports:
       - 8081:8081
     image: api_gateway
@@ -107,3 +127,32 @@ services:
     image: cours-service
     depends_on:
       - discovery
+  user:
+    build: ./user
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+      - spring.datasource.username=root
+      - spring.datasource.password=root
+      - spring.datasource.url=jdbc:h2:file:./data/testdb
+      - spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+      - spring.datasource.driver-class-name=org.h2.Driver
+      - jpa.hibernate.ddl-auto=update
+      - spring.config.import=optional:configserver:http://discovery:8761
+      - spring.jpa.defer-datasource-initialization=true
+      - keycloak.auth-server-url=http://keycloak:8180/auth
+      - keycloak.realm=jobBoardKeyCloak
+      - keycloak.resource=candidat-service
+      - keycloak.public-client=true
+      - keycloak.use-resource-role-mappings=true
+    ports:
+    - 7070:7070
+    image: user-service
+    depends_on:
+    - discovery
+    - keycloak
+  keycloak:
+    container_name: keycloak
+    #build: ./keycloak
+    ports:
+    - 8180:8180
+    image: keycloak

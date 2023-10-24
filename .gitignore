@@ -4,6 +4,17 @@
 
 !/quizz-app/target/quizz-0.0.1-SNAPSHOT.jar
 !./quizz-app/target\quizz-0.0.1-SNAPSHOT.jar
+!./user/target\**
+!./api-gateway/target/**
+./api-gateway/target/**
+api-gateway/target/
+posts/target/
+eureka-server/target/
+comments/target/
+cours/target/
+quizz-app/target/
+
+
 /*/data
 
 HELP.md
