@@ -20,6 +20,7 @@ public class ForumService implements IForumService {
 
     @Override
     public Forum getForumByID(Long idDep) {
+
         return forumRepository.findById(idDep).orElse(null);
     }
 

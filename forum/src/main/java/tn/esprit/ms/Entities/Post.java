@@ -1,35 +1,25 @@
 package tn.esprit.ms.Entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.*;
-import javax.persistence.*;
-import java.io.Serializable;
-import java.util.Date;
-import java.util.Set;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
 
-@Getter
-@Setter
-@Entity
-@Builder
-@ToString
-@AllArgsConstructor
+//@Data
+//@Builder
+//@Document(collation = "posts")
+//@JsonInclude(JsonInclude.Include.NON_NULL)
+@Data
 @NoArgsConstructor
-public class Post implements Serializable {
-
+@AllArgsConstructor
+@Builder
+public class Post {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String postId;
     private String username;
+    private String title;
     private String content;
-
-
-
-    @ManyToOne
-    @JsonIgnore
-    private Forum forum;
-
-
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "post")
-    private Set<Commentaire> commentaires;
+    private Long forumId;
 
 }

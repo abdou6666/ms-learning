@@ -20,16 +20,26 @@ public class PostService  {
         return postRepository.findAll();
     }
 
+    public Post getPost(String id) {
+        Post post = postRepository.findByPostId(id);
+        return  post;
+
+    }
+
+
     public Post updatePost(Post post) {
         return postRepository.save(post);
     }
 
-    public Optional<Post> deletePost(String id) {
-        Optional<Post> post = postRepository.findByPostId(id);
-        if(post.isPresent()){
+    public Post deletePost(String id) {
+        Post post = postRepository.findByPostId(id);
             postRepository.deleteById(id);
             return post;
-        }
-        return Optional.empty();
+
+    }
+
+    public List<Post> getPostsByFormuId(Long id) {
+        return postRepository.findByForumId(id);
+
     }
 }

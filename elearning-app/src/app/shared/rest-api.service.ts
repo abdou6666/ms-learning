@@ -21,6 +21,10 @@ export class RestApiService {
   get(target: string) {
     return this.httpClient.get(this.apiURL + target);
   }
+  getAllComments(): Observable<string[]> {
+    return this.httpClient.get<string[]>(`${this.apiURL}/comments/all`);
+  }
+
 
   add(target: string, requestBody: Object) {
     return this.httpClient.post(this.apiURL + target, requestBody).pipe(

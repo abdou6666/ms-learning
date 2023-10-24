@@ -9,8 +9,9 @@ import tn.esprit.comments.Service.CommentService;
 
 import java.util.List;
 
+
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin
 @RequestMapping("/api/comments")
 
 public class CommentCT {
@@ -18,11 +19,15 @@ public class CommentCT {
     @Autowired
     private CommentService commentService;
 
+
+
     @GetMapping("/all")
     public List<Comment> getAllComments() {
 
         return commentService.getAllComments();
     }
+
+
 
     @GetMapping("/{commentId}")
     public Comment getComment(@PathVariable Long commentId) {
@@ -39,5 +44,11 @@ public class CommentCT {
     public void deleteComment(@PathVariable Long commentId) {
 
         commentService.deleteComment(commentId);
+    }
+
+    @GetMapping("/posts/{postId}")
+    public List<Comment> getCommentByPostId(@PathVariable("postId") String postId) {
+
+        return commentService.getCommentByPostId(postId);
     }
 }

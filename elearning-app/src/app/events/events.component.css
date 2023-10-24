@@ -2,6 +2,18 @@
     display: flex;
     flex-wrap: wrap;
   }
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .delete-button {
+    background: none;
+    border: none;
+    font-size: 13px;
+    cursor: pointer;
+
+  }
   
   .event-item {
     border: 1px solid #ccc;

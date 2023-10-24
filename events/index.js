@@ -4,6 +4,16 @@ const db = require('./db');
 const api = require('./routes/Event');
 const schedule = require('node-schedule');
 const { Eureka } = require('eureka-js-client');
+const cors = require('cors');
+
+const corsOptions = {
+  origin: 'http://localhost:4200', 
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+  optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use('/api/events', api);

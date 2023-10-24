@@ -9,15 +9,10 @@ public class Cours  {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-
-
     @Column(name = "title")
     private String title;
-
     @Column(name = "description")
     private String description;
-
-
     @Column(name = "image")
     private String image;
     @Column(name = "rating")

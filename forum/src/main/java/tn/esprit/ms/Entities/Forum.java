@@ -22,7 +22,5 @@ public class Forum implements Serializable {
     private String description;
 
 
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "forum")
-    private Set<Post> posts;
 
 }
