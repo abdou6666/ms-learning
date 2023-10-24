@@ -22,12 +22,14 @@ cd your-project
 
 
 ## Step 2: Build the Project
-Use Maven to build the project. Make sure you are in the project root directory:
+Use Maven to build the project and Run the following command to download the frontend project dependencies. Make sure you are in the project root directory:
 
+Maven
 in cmd terminal 
 
 mvn clean install
 
+Nodejs
 in cmd terminal 
 
 cd events &&
@@ -58,6 +60,7 @@ Once the services are up and running, you can test your application. Depending o
 
 Access the services as needed using the appropriate URL, http://localhost:8081 because the api-gateway is configured in this port  . 
 
+Run the following command to launch the frontend project: npm start
 
 ## Step 6: Stopping and Cleanup
 To stop and remove the services, run the following Docker Compose command:
