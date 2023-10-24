@@ -1,0 +1,16 @@
+<div *ngIf="course">
+    <h2>{{ course.title }}</h2>
+    <p>{{ course.description }}</p>
+  </div>
+  
+  <h3>Comments</h3>
+  <ul>
+    <li *ngFor="let comment of comments">{{ comment }}</li>
+  </ul>
+  
+  <div>
+    <h3>Add a Comment</h3>
+    <input type="text" [(ngModel)]="newComment" />
+    <button (click)="addComment(newComment)">Submit</button>
+  </div>
+  
