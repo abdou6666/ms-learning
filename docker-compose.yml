@@ -103,8 +103,6 @@ services:
 
   quizz:
     build: ./quizz-app
-    volumes:
-      - quizzdata:/data
     environment:
       - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
       - spring.datasource.username=root
@@ -177,8 +175,4 @@ services:
     build: ./elearning-app
     image: ms-front
     ports:
-
-      - 2200:80
       - 4200:4200
-  volumes:
-    quizzdata:

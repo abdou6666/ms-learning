@@ -9,7 +9,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { CoursComponent } from './cours/cours.component';
 import { PostsComponent } from './posts/posts.component';
 import { EventsComponent } from './events/events.component';
-import { QuizComponent } from './quiz/quiz.component';
 import { ForumComponent } from './forum/forum.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { FormsModule } from '@angular/forms';

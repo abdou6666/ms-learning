@@ -24,7 +24,7 @@ export class RestApiService {
 
     getById<T = any>(target: string, id: number): Observable<T> {
         return this.httpClient.get<T>(this.apiURL + target + '/' + id,{headers:{
-                
+
         }});
     }
 
@@ -36,9 +36,7 @@ export class RestApiService {
         );
     }
 
-  get(target: string) {
-    return this.httpClient.get(this.apiURL + target);
-  }
+
   getAllComments(): Observable<string[]> {
     return this.httpClient.get<string[]>(`${this.apiURL}/comments/all`);
   }
@@ -61,13 +59,7 @@ export class RestApiService {
   }
 
 
-  add(target: string, requestBody: Object) {
-    return this.httpClient.post(this.apiURL + target, requestBody).pipe(
-      tap(() => {
-        this._refreshNeeded.next();
-      })
-    );
-  }
+
   addPost(requestBody: any) {
     return this.httpClient.post(`${this.apiURL}/posts`,  requestBody).pipe(
       tap(() => {
