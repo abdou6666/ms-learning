@@ -1,4 +1,4 @@
-"#MS-learning" 
+# MS-LEARNING
 
 Project Setup and Deployment Guide
 This guide will walk you through the steps to clone, build, and deploy the project using Docker Compose. Please follow the instructions below to get the project up and running.
@@ -14,34 +14,28 @@ Docker Compose
 Step 1: Clone the Project
 Clone the repository to your local machine using Git:
 
-bash
+in cmd terminal
 Copy code
-git clone https://github.com/azizsnoussi/MicroServices-TheCodeOfDuty-5TWIN4
+git clone https://github.com/abdou6666/ms-learning
 cd your-project
 
 Step 2: Build the Project
 Use Maven to build the project. Make sure you are in the project root directory:
 
-bash
-Copy code
+in cmd terminal
 mvn clean install
 
 Step 3: Build Docker Images
 Build Docker images for each project in the repository. Navigate to each project's directory and build the Docker image:
 
-bash
-Copy code
-cd project1
-docker build -t project1-image .
-cd ../project2
-docker build -t project2-image .
+in cmd terminal
+docker compose build 
 
 Step 4: Docker Compose
 Navigate back to the root directory of the project and use Docker Compose to start the services. The provided docker-compose.yml file defines the services and their configurations:
 
-bash
-Copy code
-docker-compose up -d
+in cmd terminal
+docker-compose up 
 This command will start all the services defined in the docker-compose.yml file in detached mode.
 
 Step 5: Testing
@@ -52,8 +46,7 @@ Access the services as needed using the appropriate URLs, such as http://localho
 Step 6: Stopping and Cleanup
 To stop and remove the services, run the following Docker Compose command:
 
-bash
-Copy code
+in cmd terminal
 docker-compose down
 This will stop and remove all containers defined in the docker-compose.yml file.
 
