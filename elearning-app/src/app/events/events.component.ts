@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RestApiService } from 'app/shared/rest-api.service';
 
 @Component({
   selector: 'app-events',
@@ -7,22 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventsComponent implements OnInit {
 
-  events = [
-    {
-      title: 'Event 1',
-      date: 'October 25, 2023',
-      description: 'Description for Event 1'
-    },
-    {
-      title: 'Event 2',
-      date: 'November 2, 2023',
-      description: 'Description for Event 2'
-    },
-  ];
+  events: any = [];
 
-  constructor() { }
+  constructor(public restApi: RestApiService) { }
 
-  ngOnInit(): void {
+  loadEvent() {
+    this.restApi.get("/events").subscribe((data: {}) => {
+      this.events = data;
+    });
   }
 
+  deleteEvent(eventId: number) {
+    if (eventId) {
+      this.restApi.delete("/events", eventId).subscribe(() => {
+        this.loadEvent(); // Reload the events after a successful delete
+      });
+    } else {
+      console.error("Invalid event ID");
+    }
+  }
+  
+
+  ngOnInit(): void {
+    this.loadEvent();
+  }
 }

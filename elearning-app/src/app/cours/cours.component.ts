@@ -1,28 +1,25 @@
 import { Component, OnInit } from '@angular/core';
+import { RestApiService } from 'app/shared/rest-api.service';
 
 @Component({
   selector: 'app-cours',
   templateUrl: './cours.component.html',
-  styleUrls: ['./cours.component.css']
+  styleUrls: ['./cours.component.css'],
 })
 export class CoursComponent implements OnInit {
+  cours: any = [];
 
-  cours = [
-    {
-      id: 1,
-      title: 'Cours 1',
-      description: 'Description du cours 1'
-    },
-    {
-      id: 2,
-      title: 'Cours 2',
-      description: 'Description du cours 2'
-    }
-  ];
-
-  constructor() { }
-
-  ngOnInit(): void {
+  loadCours() {
+    return this.restApi.get('/cours/coursall').subscribe((data: {}) => {
+      this.cours = data;
+    });
   }
 
+  constructor(public restApi: RestApiService) {}
+
+  ngOnInit(): void {
+    this.loadCours();
+  }
 }
+
+

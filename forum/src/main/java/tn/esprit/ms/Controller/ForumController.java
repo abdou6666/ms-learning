@@ -3,8 +3,11 @@ package tn.esprit.ms.Controller;
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import tn.esprit.ms.Client.PostClient;
 import tn.esprit.ms.Entities.Forum;
 import tn.esprit.ms.Service.*;
+import tn.esprit.ms.dto.ForumPostReponse;
+import tn.esprit.ms.dto.PostResponse;
 
 import java.util.*;
 
@@ -13,7 +16,7 @@ import java.util.*;
 @CrossOrigin
 @RequestMapping("/api/forum")
 public class ForumController {
-
+    private PostClient postClient;
     IForumService forumService;
     @GetMapping("/getForums")
     public List<Forum> getForums(){
@@ -43,6 +46,20 @@ public class ForumController {
     @DeleteMapping("/deleteForum/{idForum}")
     public String deleteForum (@PathVariable Long idForum){
         return forumService.deleteForum(idForum);
+    }
+
+    @GetMapping("/getPostsForumById/{idForum}")
+    public ForumPostReponse getPostsForumById(@PathVariable("idForum") Long idForum){
+
+        List<PostResponse> postResponses =  postClient.findAllPostsByFormuId(idForum);
+        Forum forum = forumService.getForumByID(idForum);
+        return  ForumPostReponse.builder()
+                .postResponses(postResponses)
+                .description(forum.getDescription())
+                .titre(forum.getTitre())
+                .id(forum.getId())
+                .build();
+
     }
 
 }

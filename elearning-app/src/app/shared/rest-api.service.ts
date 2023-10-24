@@ -21,6 +21,7 @@ export class RestApiService {
         return this.httpClient.get<T[]>(this.apiURL + target);
     }
 
+
     getById<T = any>(target: string, id: number): Observable<T> {
         return this.httpClient.get<T>(this.apiURL + target + '/' + id,{headers:{
                 
@@ -35,7 +36,47 @@ export class RestApiService {
         );
     }
 
-    delete<T = any>(target: string, elementId: number): Observable<any> {
+  get(target: string) {
+    return this.httpClient.get(this.apiURL + target);
+  }
+  getAllComments(): Observable<string[]> {
+    return this.httpClient.get<string[]>(`${this.apiURL}/comments/all`);
+  }
+
+  getAllPostsByFormId(id : number): Observable<string[]> {
+    return this.httpClient.get<string[]>(`${this.apiURL}/forum/getPostsForumById/`+ id);
+  }
+
+  getAllCommentsByPostId(id : string): Observable<string[]> {
+    return this.httpClient.get<string[]>(`${this.apiURL}/comments/posts/`+ id);
+  }
+
+
+  getForumById(id : number): Observable<string[]> {
+    return this.httpClient.get<string[]>(`${this.apiURL}/forum/getForumById/`+ id);
+  }
+
+  getPostById(id : string): Observable<any[]> {
+    return this.httpClient.get<string[]>(`${this.apiURL}/post/${id}/comments`,{headers :{'Content-Type': 'application/json'}} );
+  }
+
+
+  add(target: string, requestBody: Object) {
+    return this.httpClient.post(this.apiURL + target, requestBody).pipe(
+      tap(() => {
+        this._refreshNeeded.next();
+      })
+    );
+  }
+  addPost(requestBody: any) {
+    return this.httpClient.post(`${this.apiURL}/posts`,  requestBody).pipe(
+      tap(() => {
+        this._refreshNeeded.next();
+      })
+    );
+  }
+
+  delete<T = any>(target: string, elementId: number): Observable<any> {
         return this.httpClient.delete<T>(this.apiURL + target + '/' + elementId).pipe(
             tap(() => {
                 this._refreshNeeded.next();
