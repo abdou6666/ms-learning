@@ -5,11 +5,13 @@ import {QuizzRoutingModule} from './quizz-routing.module';
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {QuizComponent} from "./quiz/quiz.component";
+import { DetailsComponent } from './details/details.component';
 
 
 @NgModule({
     declarations: [
-        QuizComponent
+        QuizComponent,
+        DetailsComponent
     ],
     imports: [
         HttpClientModule,

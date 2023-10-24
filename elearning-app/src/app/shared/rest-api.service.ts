@@ -22,7 +22,9 @@ export class RestApiService {
     }
 
     getById<T = any>(target: string, id: number): Observable<T> {
-        return this.httpClient.get<T>(this.apiURL + target + '/' + id);
+        return this.httpClient.get<T>(this.apiURL + target + '/' + id,{headers:{
+                
+        }});
     }
 
     add<T = any>(target: string, requestBody: T): Observable<T> {

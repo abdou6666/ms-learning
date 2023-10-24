@@ -14,6 +14,7 @@ export interface Question {
     point: number;
     choix_multiple: boolean;
     quizz_id: number;
+    options: Option[];
 }
 
 export interface Option {

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Quiz} from "../../shared/quizz";
 import {RestApiService} from "../../shared/rest-api.service";
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-quiz',
@@ -22,8 +23,11 @@ export class QuizComponent implements OnInit {
         return this.restApi.delete<Quiz>("/quiz", id).subscribe(e => e);
     }
 
+    async goToDetails(id: number) {
+        await this.route.navigate(["details", id]);
+    }
 
-    constructor(public restApi: RestApiService) {
+    constructor(public restApi: RestApiService, private route: Router) {
     }
 
     ngOnInit(): void {
