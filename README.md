@@ -10,6 +10,7 @@ Git
 Maven
 Docker
 Docker Compose
+Angular 
 
 ## Step 1: Clone the Project
 Clone the repository to your local machine using Git:
@@ -21,13 +22,21 @@ cd your-project
 
 
 ## Step 2: Build the Project
-Use Maven to build the project. Make sure you are in the project root directory:
+Use Maven to build the project and Run the following command to download the frontend project dependencies. Make sure you are in the project root directory:
 
+Maven
 in cmd terminal 
-copy code
+
 mvn clean install
 
+Nodejs
+in cmd terminal 
 
+cd events &&
+npm i
+
+cd elearning-app &&
+npm i
 ## Step 3: Build Docker Images
 Build Docker images for each project in the repository. Navigate to each project's directory and build the Docker image:
 
@@ -51,6 +60,7 @@ Once the services are up and running, you can test your application. Depending o
 
 Access the services as needed using the appropriate URL, http://localhost:8081 because the api-gateway is configured in this port  . 
 
+Run the following command to launch the frontend project: npm start
 
 ## Step 6: Stopping and Cleanup
 To stop and remove the services, run the following Docker Compose command:
