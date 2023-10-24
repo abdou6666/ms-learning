@@ -14,7 +14,7 @@ services:
     ports:
       - 8761:8761
     image: eureka_image
-  
+
   events:
     build: ./events
     environment:
@@ -26,9 +26,8 @@ services:
       - 3000:3000
     image: events-service
     depends_on:
-    - mongo_db
-    - discovery
-
+      - mongo_db
+      - discovery
 
   mysqldb:
     container_name: mysqldb
@@ -46,8 +45,6 @@ services:
       - jpa.hibernate.ddl-auto=update
       - jpa.show-sql=true
       - jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
-
-
 
   postgres:
     image: postgres:13-alpine
@@ -78,7 +75,6 @@ services:
     depends_on:
       - discovery
       - postgres
-
 
   post:
     build: ./posts
@@ -156,8 +152,6 @@ services:
     depends_on:
       - discovery
 
-
-
   category:
       build: ./category
       environment:
@@ -175,3 +169,10 @@ services:
       image: category-s
       depends_on:
         - discovery
+
+
+  front:
+    build: ./elearning-app
+    image: ms-front
+    ports:
+      - 2200:80

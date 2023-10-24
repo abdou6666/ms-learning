@@ -1,0 +1,9 @@
+<div class="forum-posts">
+    <div *ngFor="let post of forumPosts" class="forum-post">
+      <h2>{{ post.title }}</h2>
+      <p>Author: {{ post.author }}</p>
+      <p>Date: {{ post.date }}</p>
+      <p>{{ post.content }}</p>
+    </div>
+  </div>
+  
