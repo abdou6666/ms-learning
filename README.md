@@ -23,7 +23,8 @@ cd your-project
 ## Step 2: Build the Project
 Use Maven to build the project. Make sure you are in the project root directory:
 
-in cmd terminal
+in cmd terminal 
+copy code
 mvn clean install
 
 
@@ -31,6 +32,7 @@ mvn clean install
 Build Docker images for each project in the repository. Navigate to each project's directory and build the Docker image:
 
 in cmd terminal
+copy code
 docker compose build 
 
 
@@ -38,7 +40,9 @@ docker compose build
 Navigate back to the root directory of the project and use Docker Compose to start the services. The provided docker-compose.yml file defines the services and their configurations:
 
 in cmd terminal
+copy code
 docker-compose up 
+
 This command will start all the services defined in the docker-compose.yml file in detached mode.
 
 
@@ -52,7 +56,9 @@ Access the services as needed using the appropriate URLs, such as http://localho
 To stop and remove the services, run the following Docker Compose command:
 
 in cmd terminal
+copy code
 docker-compose down
+
 This will stop and remove all containers defined in the docker-compose.yml file.
 
 That's it! You've successfully cloned, built, and deployed the project using Docker Compose. Enjoy using the application!
