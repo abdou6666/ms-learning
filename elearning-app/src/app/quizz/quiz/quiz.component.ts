@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Quizz} from 'app/shared/quizz';
-import {RestApiService} from 'app/shared/rest-api.service';
+import {Quiz} from "../../shared/quizz";
+import {RestApiService} from "../../shared/rest-api.service";
 
 @Component({
     selector: 'app-quiz',
@@ -8,13 +8,18 @@ import {RestApiService} from 'app/shared/rest-api.service';
     styleUrls: ['./quiz.component.css']
 })
 export class QuizComponent implements OnInit {
-    quizzes: Quizz[] = [];
+
+    quizzes: Quiz[] = [];
 
     loadQuizz() {
-        return this.restApi.get<Quizz>("/quiz/").subscribe((data) => {
+        return this.restApi.get<Quiz>("/quiz/").subscribe((data) => {
             console.log(data)
             this.quizzes = data;
         })
+    }
+
+    deleteQuiz(id: number) {
+        return this.restApi.delete<Quiz>("/quiz", id).subscribe(e => e);
     }
 
 
@@ -25,5 +30,6 @@ export class QuizComponent implements OnInit {
         this.loadQuizz()
 
     }
+
 
 }

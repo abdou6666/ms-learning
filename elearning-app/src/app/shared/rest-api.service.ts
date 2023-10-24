@@ -1,7 +1,6 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {Observable, tap, Subject, catchError, retry, throwError} from 'rxjs';
-import {Quizz} from './quizz';
+import {Observable, tap, Subject, throwError} from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
