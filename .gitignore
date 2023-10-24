@@ -10,7 +10,7 @@ HELP.md
 /*/!.mvn/wrapper/maven-wrapper.jar
 /*/!**/src/main/**/target/
 /*/!**/src/test/**/target/
-
+/
 ### STS ###
 /*/.apt_generated
 /*/.classpath
@@ -38,3 +38,50 @@ HELP.md
 
 ### VS Code ###
 /*/.vscode/
+
+
+
+
+# front
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+elearning-app/dist
+elearning-app/tmp
+elearning-app/out-tsc
+elearning-app/bazel-out
+
+# Node
+elearning-app/node_modules
+elearning-app/npm-debug.log
+elearning-app/yarn-error.log
+
+# IDEs and editors
+elearning-app/.idea/
+elearning-app/.project
+elearning-app/.classpath
+elearning-app/.c9/
+elearning-app/*.launch
+elearning-app/.settings/
+elearning-app/*.sublime-workspace
+
+# Visual Studio Code
+elearning-app/.vscode/*
+elearning-app/!.vscode/settings.json
+elearning-app/!.vscode/tasks.json
+elearning-app/!.vscode/launch.json
+elearning-app/!.vscode/extensions.json
+elearning-app/.history/*
+
+# Miscellaneous
+elearning-app//.angular/cache
+elearning-app/.sass-cache/
+elearning-app//connect.lock
+elearning-app//coverage
+elearning-app//libpeerconnection.log
+elearning-app/testem.log
+elearning-app//typings
+
+# System files
+elearning-app/.DS_Store
+elearning-app/Thumbs.db
