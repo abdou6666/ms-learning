@@ -31,7 +31,7 @@ public class SpringCloudConfig {
                 )
 
                  .route(r -> r.path("/api/categories/**")
-                        .uri("http://category:8082/") 
+                        .uri("http://category:8093/") 
                 )
 
                 .route(r -> r.path("/api/forum/**")

@@ -19,7 +19,7 @@ import java.util.Optional;
 
 @RestController
 @AllArgsConstructor
-@CrossOrigin
+@CrossOrigin("http://front:4200")
 @RequestMapping(value = "/api/posts",consumes = "application/json",produces = "application/json")
 public class PostController {
 

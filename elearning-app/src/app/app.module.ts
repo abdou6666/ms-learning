@@ -12,6 +12,8 @@ import { QuizComponent } from './quiz/quiz.component';
 import { ForumComponent } from './forum/forum.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { FormsModule } from '@angular/forms';
+import { ForumDetailComponent } from './forum-detail/forum-detail.component';
+import { CommentsComponent } from './comments/comments.component';
 
 const routes: Routes = [
   { path: '', component: NavbarComponent },
@@ -20,7 +22,11 @@ const routes: Routes = [
   { path: 'events', component: EventsComponent },
   { path: 'quiz', component: QuizComponent },
   { path: 'forum', component: ForumComponent },
+  { path: 'comment/:id', component: CommentsComponent },
   { path: 'cours/:id', component: CourseDetailComponent },
+  { path: 'forum/:id', component: ForumDetailComponent },
+
+  
 ];
 
 @NgModule({
@@ -33,6 +39,8 @@ const routes: Routes = [
     QuizComponent,
     ForumComponent,
     CourseDetailComponent,
+    ForumDetailComponent,
+    CommentsComponent,
   ],
   imports: [FormsModule, HttpClientModule, BrowserModule, RouterModule.forRoot(routes)],
   providers: [],

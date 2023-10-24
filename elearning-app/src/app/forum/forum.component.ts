@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RestApiService } from 'app/shared/rest-api.service';
 
 @Component({
   selector: 'app-forum',
@@ -7,24 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForumComponent implements OnInit {
 
-  forumPosts = [
-    {
-      title: 'Post 1',
-      author: 'John Doe',
-      date: 'October 26, 2023',
-      content: 'Content for Post 1'
-    },
-    {
-      title: 'Post 2',
-      author: 'Jane Smith',
-      date: 'November 3, 2023',
-      content: 'Content for Post 2'
-    },
-  ];
+  forums: any = [];
+  titre: any;
+  description:any;
 
-  constructor() { }
+  loadForum() {
+    
+    this.restApi.get("/forum/getForums").subscribe((data: {}) => {
+      console.log(data,"string forum data")
+      this.forums = data;
+    });
+  }
 
+  constructor(public restApi: RestApiService) { }
+ 
+  addForum(){
+    console.log(this.titre)
+    console.log(this.description)
+    this.restApi.add("/forum/addForum", {titre:this.titre ,description:this.description}).subscribe(
+      res =>  console.log(res)
+    )
+  }
   ngOnInit(): void {
+    this.loadForum();
+
   }
 
 }
